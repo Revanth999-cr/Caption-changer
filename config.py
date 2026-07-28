@@ -1,18 +1,5 @@
-import os
+API_ID = 38056031
 
-# Telegram API
-API_ID = int(os.getenv("API_ID", "0"))
-API_HASH = os.getenv("API_HASH", "")
+API_HASH = "e5c735453082183ed853ccdc97d96e65"
 
-# Userbot String Session
-STRING_SESSION = os.getenv("STRING_SESSION", "")
-
-# Optional
-OWNER_ID = int(os.getenv("OWNER_ID", "0"))
-LOG_CHANNEL = int(os.getenv("LOG_CHANNEL", "0"))
-
-# Validation
-if not API_ID or not API_HASH or not STRING_SESSION:
-    raise ValueError(
-        "Please set API_ID, API_HASH and STRING_SESSION in your environment variables."
-    )
+STRING_SESSION = "BQIkBSEAU4_4n3RniUyYCnQ8JUHtQ3gAo5VH47282A3VhLrY-EQEZf_t-AsUP0gBOhUQD06pu6BdJpp1xSWKV4gdFEhxhmvsWiRb853p824jcyZfAa1CEbsjzziBqsjlDCawHaPZs7krtode2DLTu_Z_9_g2WnCF7q1pNJtdSLPn9zHrqTFM7XJOv3M8G4DRHCAud2G2wydwTSm5-LUT2qlklaUVn84oVh6WfOAGbpOzYjyYwoLpXARcoRJ1WQYyflsbc1wYN-xUlWs6d1XwI-kcuz2UoLdU51EqzRk5_XroX-JZs8fyz-0mp77_7PpOmwxH3wJjFyRdFsqoAmml7pJVAnA_7AAAAAF5k2PyAA"
