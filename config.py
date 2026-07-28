@@ -10,3 +10,9 @@ STRING_SESSION = os.getenv("STRING_SESSION", "")
 # Optional
 OWNER_ID = int(os.getenv("OWNER_ID", "0"))
 LOG_CHANNEL = int(os.getenv("LOG_CHANNEL", "0"))
+
+# Validation
+if not API_ID or not API_HASH or not STRING_SESSION:
+    raise ValueError(
+        "Please set API_ID, API_HASH and STRING_SESSION in your environment variables."
+    )
