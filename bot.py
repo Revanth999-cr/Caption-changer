@@ -1,14 +1,11 @@
 from pyrogram import Client, filters
-
-API_ID = 123456          # Replace
-API_HASH = "YOUR_API_HASH"
-BOT_TOKEN = "YOUR_BOT_TOKEN"
+from config import API_ID, API_HASH, STRING_SESSION
 
 app = Client(
     "BoldCaptionBot",
     api_id=API_ID,
     api_hash=API_HASH,
-    bot_token=BOT_TOKEN
+    session_string=STRING_SESSION
 )
 
 normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
@@ -20,16 +17,11 @@ def to_bold(text):
 
 @app.on_message(filters.channel)
 async def channel_post(client, message):
-    if not message.caption:
-        return
-
-    caption = to_bold(message.caption)
-
     try:
-        await message.copy(
-            chat_id=message.chat.id,
-            caption=caption
-        )
+        if message.caption:
+            await message.edit_caption(to_bold(message.caption))
+        elif message.text:
+            await message.edit_text(to_bold(message.text))
     except Exception as e:
         print(e)
 
